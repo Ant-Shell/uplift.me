@@ -1,16 +1,15 @@
 import React from "react"
+import "./Nav.css"
 
 
 const Nav = () => {
   return (
-    <header>
-      <div className="branding">
-        <h1>Uplift.me</h1>
-      </div>
-      <div className="view-button-container">
-        <button>Placeholder</button>
-      </div>
-    </header>
+    <nav>
+      <header>
+        <h1 clasName="branding">Uplift.me</h1>
+        <button className="view-change-button">Placeholder</button>
+      </header>
+    </nav>
   )
 }
 
