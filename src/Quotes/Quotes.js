@@ -8,6 +8,7 @@ const Quotes = ({quotes}) => {
     return (
       <Quote 
       text={quote.text}
+      author={quote.author}
       key={Date.now()}
       />
     )
