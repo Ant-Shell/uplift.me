@@ -1,5 +1,6 @@
 import React from "react"
 import Quote from "../Quote/Quote"
+import "./Quotes.css"
 
 const Quotes = ({quotes}) => {
 
