@@ -1,9 +1,11 @@
 import React from "react"
 import Nav from "../Nav/Nav"
 import Quotes from "../Quotes/Quotes"
+import JournalSection from "../JournalSection/JournalSection"
 import './App.css';
 import { quotesEndpoint, animalEndpoint } from "../endpoints"
 import fetchData from "../apiCalls";
+
 
 
 class App extends React.Component {
@@ -13,8 +15,13 @@ class App extends React.Component {
         quotes: [],
         shibes: [],
         cats: [],
-        birds: []
+        birds: [],
+        savedJournals: []
      }
+  }
+
+  addJournalEntry = (newJournalEntry) => {
+    this.setState=({savedJournals: [...this.state.savedJournals, newJournalEntry]})
   }
 
   componentDidMount() {
@@ -34,6 +41,8 @@ class App extends React.Component {
       <main className="app">
         <Nav />
         <Quotes quotes={this.state.quotes} />
+        <JournalSection addJournalEntry={this.addJournalEntry}/>
+        {/* Footer /> */}
       </main>
     );
   }
