@@ -14,9 +14,11 @@ class Journal extends React.Component {
   }
 
   submitJournalEntry = (event) => {
+    const todaysDate = new Date().toLocaleDateString('en-ZA')
     event.preventDefault()
     const newJournalEntry = {
       id: Date.now(),
+      date: todaysDate,
       ...this.state
     }
     this.props.addJournalEntry(newJournalEntry)
