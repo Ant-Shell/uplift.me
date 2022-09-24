@@ -10,12 +10,12 @@ class Journal extends React.Component {
   }
 
   handleChange = (event) => {
-    this.setState({ [event.target.name]: event.target.value})
+    this.setState({ journalEntry: event.target.value})
   }
 
   submitJournalEntry = (event) => {
-    const todaysDate = new Date().toLocaleDateString('en-ZA')
     event.preventDefault()
+    const todaysDate = new Date().toLocaleDateString('en-ZA')
     const newJournalEntry = {
       id: Date.now(),
       date: todaysDate,
@@ -25,22 +25,23 @@ class Journal extends React.Component {
     this.clearJournalInput()
   }
 
-  clearJournalInput = () => {
+  clearJournalInput = (event) => {
+    event.preventDefault()
     this.setState({journalEntry: ""})
   }
 
   render() {
     return (
       <form>
-        <input 
+        <textarea 
         type="text"
-        placeholder="Journal"
+        placeholder="Journal entry here ..."
         name="journal"
         value={this.state.journalEntry}
         onChange={(event => this.handleChange(event))}
         />
-        <button className="clear-button" onClick={() => this.clearJournalInput()}>Clear Entry</button>
-        <button className="add-button" onClick={(event) => this.submitJournalEntry(event)}>Add Entry</button>
+        <button className="clear-button" id="clear" onClick={(event) => this.clearJournalInput(event)}>Clear Entry</button>
+        <button className="add-button" id="submit" onClick={(event) => this.submitJournalEntry(event)}>Add Entry</button>
       </form>
     )
   }
