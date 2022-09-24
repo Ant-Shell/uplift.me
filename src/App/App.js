@@ -2,10 +2,10 @@ import React from "react"
 import Nav from "../Nav/Nav"
 import Quotes from "../Quotes/Quotes"
 import JournalSection from "../JournalSection/JournalSection"
+import AnimalSection from "../AnimalSection/AnimalSection"
 import './App.css'
 import { quotesEndpoint, animalEndpoint } from "../endpoints"
 import fetchData from "../apiCalls"
-
 
 
 class App extends React.Component {
@@ -47,7 +47,7 @@ class App extends React.Component {
         <Nav />
         <Quotes quotes={this.state.quotes} />
         <JournalSection journalList={this.state.savedJournals} addJournalEntry={this.addJournalEntry} noJournalEntry={this.state.noJournalEntry} noJournalEntryUpdate={this.noJournalEntryUpdate} />
-        {/* AnimalSection /> */}
+        <AnimalSection dogs={this.state.shibes}/>
         {/* Footer /> */}
       </main>
     );
