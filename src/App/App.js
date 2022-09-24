@@ -2,9 +2,9 @@ import React from "react"
 import Nav from "../Nav/Nav"
 import Quotes from "../Quotes/Quotes"
 import JournalSection from "../JournalSection/JournalSection"
-import './App.css';
+import './App.css'
 import { quotesEndpoint, animalEndpoint } from "../endpoints"
-import fetchData from "../apiCalls";
+import fetchData from "../apiCalls"
 
 
 
@@ -41,7 +41,7 @@ class App extends React.Component {
       <main className="app">
         <Nav />
         <Quotes quotes={this.state.quotes} />
-        <JournalSection journalList={this.savedJournals} addJournalEntry={this.addJournalEntry}/>
+        <JournalSection journalList={this.state.savedJournals} addJournalEntry={this.addJournalEntry}/>
         {/* AnimalSection /> */}
         {/* Footer /> */}
       </main>
