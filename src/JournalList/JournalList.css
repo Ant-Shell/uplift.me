@@ -1,0 +1,10 @@
+.journallist-container {
+  height: 45vh;
+  width: 30vw;
+  border-style: solid;
+  overflow: auto;
+}
+
+.add-journal-message {
+  text-align: center;
+}
