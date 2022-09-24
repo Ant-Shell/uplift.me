@@ -6,6 +6,7 @@ import AnimalSection from "../AnimalSection/AnimalSection"
 import './App.css'
 import { quotesEndpoint, animalEndpoint } from "../endpoints"
 import fetchData from "../apiCalls"
+import { Route, Switch} from "react-router-dom"
 
 
 class App extends React.Component {
@@ -46,8 +47,10 @@ class App extends React.Component {
       <main className="app">
         <Nav />
         <Quotes quotes={this.state.quotes} />
-        <JournalSection journalList={this.state.savedJournals} addJournalEntry={this.addJournalEntry} noJournalEntry={this.state.noJournalEntry} noJournalEntryUpdate={this.noJournalEntryUpdate} />
-        <AnimalSection dogs={this.state.shibes}/>
+        <Switch>
+          <Route exact path="/" render={() => <JournalSection journalList={this.state.savedJournals} addJournalEntry={this.addJournalEntry} noJournalEntry={this.state.noJournalEntry} noJournalEntryUpdate={this.noJournalEntryUpdate}/>}/>
+          <Route exact path="/animals" render={() => <AnimalSection dogs={this.state.shibes}/>}/>
+        </Switch>
         {/* Footer /> */}
       </main>
     );
