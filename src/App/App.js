@@ -41,7 +41,8 @@ class App extends React.Component {
       <main className="app">
         <Nav />
         <Quotes quotes={this.state.quotes} />
-        <JournalSection addJournalEntry={this.addJournalEntry}/>
+        <JournalSection journalList={this.savedJournals} addJournalEntry={this.addJournalEntry}/>
+        {/* AnimalSection /> */}
         {/* Footer /> */}
       </main>
     );
