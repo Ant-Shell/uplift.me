@@ -18,6 +18,7 @@ const JournalList = ( { journalList }) => {
   return (
     <div className="journallist-container">
       { journalCards.length ? journalCards : <p className="add-journal-message">Please save a journal entry</p>}
+      {/* Need button to remove all journal entries */}
     </div>
   )
 }
