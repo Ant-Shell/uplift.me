@@ -2,3 +2,7 @@ form {
   height: 55vh;
   width: 25vw;
 }
+
+.card {
+  border-style: solid;
+}
