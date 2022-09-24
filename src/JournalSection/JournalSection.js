@@ -4,11 +4,11 @@ import Journal from "../Journal/Journal"
 import JournalList from "../JournalList/JournalList"
 
 
-const JournalSection = ( {addJournalEntry} ) => {
+const JournalSection = ( {addJournalEntry, journalList} ) => {
   return (
     <div className="journal-section">
       <Journal addJournalEntry={addJournalEntry} />
-      <JournalList />
+      <JournalList journalList={journalList} />
     </div>
   )
 }
