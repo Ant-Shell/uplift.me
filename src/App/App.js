@@ -16,12 +16,17 @@ class App extends React.Component {
         shibes: [],
         cats: [],
         birds: [],
-        savedJournals: []
+        savedJournals: [],
+        noJournalEntry: false
      }
   }
 
   addJournalEntry = (newJournalEntry) => {
-    this.setState=({savedJournals: [...this.state.savedJournals, newJournalEntry]})
+    this.setState({savedJournals: [...this.state.savedJournals, newJournalEntry], noJournalEntry: false})
+  }
+
+  noJournalEntryUpdate = () => {
+    this.setState({ noJournalEntry: true })
   }
 
   componentDidMount() {
@@ -41,7 +46,7 @@ class App extends React.Component {
       <main className="app">
         <Nav />
         <Quotes quotes={this.state.quotes} />
-        <JournalSection journalList={this.state.savedJournals} addJournalEntry={this.addJournalEntry}/>
+        <JournalSection journalList={this.state.savedJournals} addJournalEntry={this.addJournalEntry} noJournalEntry={this.state.noJournalEntry} noJournalEntryUpdate={this.noJournalEntryUpdate} />
         {/* AnimalSection /> */}
         {/* Footer /> */}
       </main>
