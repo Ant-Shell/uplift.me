@@ -15,14 +15,20 @@ class Journal extends React.Component {
 
   submitJournalEntry = (event) => {
     event.preventDefault()
-    const todaysDate = new Date().toLocaleDateString('en-ZA')
-    const newJournalEntry = {
-      id: Date.now(),
-      date: todaysDate,
-      ...this.state
+    if (!this.state.journalEntry) {
+      this.props.noJournalEntryUpdate()
+    } else {
+      const todaysDate = new Date().toLocaleDateString('en-US')
+      const theTime = new Date().toLocaleTimeString()
+      const newJournalEntry = {
+        id: Date.now(),
+        date: todaysDate,
+        time: theTime,
+        ...this.state
+      }
+      this.props.addJournalEntry(newJournalEntry)
+      this.clearJournalInput(event)
     }
-    this.props.addJournalEntry(newJournalEntry)
-    this.clearJournalInput()
   }
 
   clearJournalInput = (event) => {
@@ -42,6 +48,7 @@ class Journal extends React.Component {
         />
         <button className="clear-button" id="clear" onClick={(event) => this.clearJournalInput(event)}>Clear Entry</button>
         <button className="add-button" id="submit" onClick={(event) => this.submitJournalEntry(event)}>Add Entry</button>
+        {this.props.noJournalEntry === true && <p className="error-mesage">Please add your journal entry</p>}
       </form>
     )
   }
