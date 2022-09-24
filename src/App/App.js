@@ -1,9 +1,11 @@
 import React from "react"
 import Nav from "../Nav/Nav"
 import Quotes from "../Quotes/Quotes"
-import './App.css';
+import JournalSection from "../JournalSection/JournalSection"
+import './App.css'
 import { quotesEndpoint, animalEndpoint } from "../endpoints"
-import fetchData from "../apiCalls";
+import fetchData from "../apiCalls"
+
 
 
 class App extends React.Component {
@@ -13,15 +15,25 @@ class App extends React.Component {
         quotes: [],
         shibes: [],
         cats: [],
-        birds: []
+        birds: [],
+        savedJournals: [],
+        noJournalEntry: false
      }
+  }
+
+  addJournalEntry = (newJournalEntry) => {
+    this.setState({savedJournals: [...this.state.savedJournals, newJournalEntry], noJournalEntry: false})
+  }
+
+  noJournalEntryUpdate = () => {
+    this.setState({ noJournalEntry: true })
   }
 
   componentDidMount() {
     Promise.all( [ fetchData(quotesEndpoint), fetchData(animalEndpoint("shibes")), fetchData(animalEndpoint("cats")), fetchData(animalEndpoint("birds"))])
     .then(data => {
       const quotesList = data[0];
-      let random = Math.floor(Math.random() * quotesList.length)
+      const random = Math.floor(Math.random() * quotesList.length)
       const shibesList = data[1];
       const catsList = data[2];
       const birdsList = data[3];
@@ -34,6 +46,9 @@ class App extends React.Component {
       <main className="app">
         <Nav />
         <Quotes quotes={this.state.quotes} />
+        <JournalSection journalList={this.state.savedJournals} addJournalEntry={this.addJournalEntry} noJournalEntry={this.state.noJournalEntry} noJournalEntryUpdate={this.noJournalEntryUpdate} />
+        {/* AnimalSection /> */}
+        {/* Footer /> */}
       </main>
     );
   }

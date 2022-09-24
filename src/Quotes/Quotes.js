@@ -1,5 +1,6 @@
 import React from "react"
 import Quote from "../Quote/Quote"
+import "./Quotes.css"
 
 const Quotes = ({quotes}) => {
 
@@ -7,6 +8,7 @@ const Quotes = ({quotes}) => {
     return (
       <Quote 
       text={quote.text}
+      author={quote.author}
       key={Date.now()}
       />
     )
