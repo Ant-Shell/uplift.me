@@ -5,3 +5,7 @@ header {
   width: 100vw;
   height: 8vh;
 }
+
+.view-change-button {
+  margin-top: 3vh;
+}

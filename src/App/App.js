@@ -18,7 +18,9 @@ class App extends React.Component {
         cats: [],
         birds: [],
         savedJournals: [],
-        noJournalEntry: false
+        noJournalEntry: false,
+        url: '',
+        buttonText: 'Animals'
      }
   }
 
@@ -30,7 +32,15 @@ class App extends React.Component {
     this.setState({ noJournalEntry: true })
   }
 
-  componentDidMount() {
+   pageSwitch = () => {
+    if(this.state.url !== 'animals') {
+      this.setState({url: 'animals', buttonText: 'Journal' })
+    } else {
+      this.setState({url: '', buttonText: 'Animals'})
+    }
+  }
+
+  componentDidMount = () => {
     Promise.all( [ fetchData(quotesEndpoint), fetchData(animalEndpoint("shibes")), fetchData(animalEndpoint("cats")), fetchData(animalEndpoint("birds"))])
     .then(data => {
       const quotesList = data[0];
@@ -45,7 +55,7 @@ class App extends React.Component {
   render() {
     return (
       <main className="app">
-        <Nav />
+        <Nav url={this.state.url} buttonText={this.state.buttonText} pageSwitch={this.pageSwitch}/>
         <Quotes quotes={this.state.quotes} />
         <Switch>
           <Route exact path="/" render={() => <JournalSection journalList={this.state.savedJournals} addJournalEntry={this.addJournalEntry} noJournalEntry={this.state.noJournalEntry} noJournalEntryUpdate={this.noJournalEntryUpdate}/>}/>
