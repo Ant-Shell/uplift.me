@@ -8,6 +8,10 @@ describe('Journal view', () => {
     // View button check
   })
 
+  it('should be able to move to animals view', () => {
+    // Verify view button functionality
+  })
+
   it('displays a randomized quote', () => {
     // Thought for the day header check
     // Randomized quote check
@@ -15,6 +19,7 @@ describe('Journal view', () => {
 
   it('displays a message if randomized quote is unavailable', () => {
     // Thought for the day header check
+    // Simulate invalid fetch call
     // Randomized message unavailable check - need to build this in
   })
 
@@ -48,4 +53,5 @@ describe('Journal view', () => {
     // Verify message input is empty
     // Verify journal entry is in saved journals area
   })
+
 })
