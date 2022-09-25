@@ -1,0 +1,4 @@
+.animals-container {
+  display: flex;
+  overflow-y: auto;
+}
