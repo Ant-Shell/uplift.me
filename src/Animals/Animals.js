@@ -4,12 +4,12 @@ import DogCard from "../DogCard/DogCard"
 
 const Animals = ({dogs}) => {
   const dogCards = dogs.map((dog, index) => {
-    const uniqueValue = Date.now()
+    const value = Date.now()
     return (
       <DogCard
-      id={uniqueValue} 
-      dogPic={dog[index]}
-      key={uniqueValue}
+      id={value + index}
+      dogPic={dog}
+      key={value + index}
       />
     )
   })
