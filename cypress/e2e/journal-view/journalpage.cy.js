@@ -25,44 +25,42 @@ describe('Journal view', () => {
 
   it('displays a message if randomized quote is unavailable', () => {
     cy.get('h2').contains('Thought for the day:') 
-    // Simulate invalid fetch call
     cy.intercept('GET', 'https://type.fit/api/quotes', {
       statusCode: 401
     })
     .get('p[class=quote-error-message]')
     .should('contain', 'Brighten your day with Uplift.me')
-    // Randomized message unavailable check
   })
 
   it('should have a message input field', () => {
-    // Textarea check (add id?)
+    cy.get('textarea[type=text]')
   })
 
   it('should have a Clear Entry button', () => {
-    // Button check (add id?)
+    cy.get('button[id=clear]')
   })
 
   it('should have an Add Entry button', () => {
-    // Button check (add id?)
+    cy.get('button[id=submit]')
   })
 
   it('should have a saved journals area', () => {
-    // Container check
+    cy.get('div[class=journallist-container]')
   })
 
   it('should be able to clear a journal entry', () => {
-    // Verify message input is empty
-    // Add info in message input field
-    // Click 'Clear Entry' button
-    // Verify message input is empty
+    cy.get('textarea[type=text]').should('contain', '')
+    cy.get('textarea[type=text]').type('Hello', { force: true })
+    cy.get('button[id=clear]').click()
+    cy.get('textarea[type=text]').should('contain', '')
   })
 
   it('should be able to add a journal entry', () => {
-    // Verify message input is empty
-    // Add info in message input field
-    // Click 'Add Entry' button
-    // Verify message input is empty
-    // Verify journal entry is in saved journals area
+    cy.get('textarea[type=text]').should('contain', '')
+    cy.get('textarea[type=text]').type('Hello', { force: true })
+    cy.get('button[id=submit]').click()
+    cy.get('textarea[type=text]').should('contain', '')
+    cy.get('div[class=card]').should('contain', 'Hello')
   })
 
 })
