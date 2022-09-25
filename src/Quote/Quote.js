@@ -4,8 +4,8 @@ import "./Quote.css"
 const Quote = ({text, author}) => {
   return (
     <div className="quote">
-      <p>"{text}"</p>
-      <p>- {author}</p>
+      <p className="quote-text" id="quoteText">"{text}"</p>
+      <p className="author" id="author">- {author}</p>
     </div>
   )
 }
