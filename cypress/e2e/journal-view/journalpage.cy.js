@@ -4,17 +4,23 @@ describe('Journal view', () => {
   })
 
   it('displays a header', () => {
-    // Logo/branding check
-    // View button check
+    cy.get('h1').contains('Uplift.me')
+    cy.get('button[id=viewChangeButton]')
   })
 
   it('should be able to move to animals view', () => {
-    // Verify view button functionality
+    cy.get('button[id=viewChangeButton]')
+    .click()
+    cy.url().should('include', 'animals')
+    .get('img')
+    cy.get('button[id=viewChangeButton]')
+    .click()
   })
 
-  it('displays a randomized quote', () => {
-    // Thought for the day header check
-    // Randomized quote check
+  it('displays a quote', () => {
+    cy.get('h2').contains('Thought for the day:') 
+    cy.get('p[id=quoteText]')
+    cy.get('p[id=author]')
   })
 
   it('displays a message if randomized quote is unavailable', () => {
