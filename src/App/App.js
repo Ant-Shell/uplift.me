@@ -19,8 +19,6 @@ class App extends React.Component {
         birds: [],
         savedJournals: [],
         noJournalEntry: false,
-        url: '',
-        buttonText: 'Animals'
      }
   }
 
@@ -30,14 +28,6 @@ class App extends React.Component {
 
   noJournalEntryUpdate = () => {
     this.setState({ noJournalEntry: true })
-  }
-
-   pageSwitch = () => {
-    if(this.state.url !== 'animals') {
-      this.setState({url: 'animals', buttonText: 'Journal' })
-    } else {
-      this.setState({url: '', buttonText: 'Animals'})
-    }
   }
 
   componentDidMount = () => {
@@ -55,7 +45,7 @@ class App extends React.Component {
   render() {
     return (
       <main className="app">
-        <Nav url={this.state.url} buttonText={this.state.buttonText} pageSwitch={this.pageSwitch}/>
+        <Nav url={this.state.url} buttonText={this.state.buttonText} />
         <Quotes quotes={this.state.quotes} />
         <Switch>
           <Route exact path="/" render={() => <JournalSection journalList={this.state.savedJournals} addJournalEntry={this.addJournalEntry} noJournalEntry={this.state.noJournalEntry} noJournalEntryUpdate={this.noJournalEntryUpdate}/>}/>
