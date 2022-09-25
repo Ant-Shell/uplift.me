@@ -9,7 +9,11 @@ describe('Animal view', () => {
   })
 
   it('should be able to move to journal view', () => {
-    // Verify view button functionality
+    cy.get('button[id=viewChangeButton]')
+    .click()
+    cy.url().should('include', '/')
+    cy.get('button[id=viewChangeButton]')
+    .click()
   })
 
   // it('should be able to view an animals banner', () => {
@@ -18,11 +22,18 @@ describe('Animal view', () => {
   // })
 
   it('should show pictures of cute animals', () => {
-    // Verify there are 10 animal pics
+    cy.get('div[class=animals-container]')
+    .find('div[class=dog-card]')
+    .should('have.length', 10)
   })
 
   it('should display a message if no animal pics render', () => {
     // Simulate invalid fetch call
     // Verify error message
+    cy.intercept('GET', 'https://shibe.online/api/shibes?count=10', {
+      statusCode: 401
+    })
+    .get('p[class=animal-error-message]')
+    .should('contain', 'No animals found at this time :(')
   })
 })
