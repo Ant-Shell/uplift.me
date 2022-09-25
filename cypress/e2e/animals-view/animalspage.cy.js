@@ -28,8 +28,6 @@ describe('Animal view', () => {
   })
 
   it('should display a message if no animal pics render', () => {
-    // Simulate invalid fetch call
-    // Verify error message
     cy.intercept('GET', 'https://shibe.online/api/shibes?count=10', {
       statusCode: 401
     })
