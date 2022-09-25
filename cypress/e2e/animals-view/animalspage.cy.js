@@ -4,8 +4,8 @@ describe('Animal view', () => {
   })
 
   it('displays a header', () => {
-     // Logo/branding check
-    // View button check
+    cy.get('h1').contains('Uplift.me')
+    cy.get('button[id=viewChangeButton]')
   })
 
   it('should be able to move to journal view', () => {
