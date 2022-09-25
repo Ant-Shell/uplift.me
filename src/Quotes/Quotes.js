@@ -17,7 +17,7 @@ const Quotes = ({quotes}) => {
   return (
     <div className="quote-container">
       <h2 className="quote-header">Thought for the day:</h2>
-      {quoteTest}
+      {quoteTest.length ? quoteTest: <p className="quote-error-message">Brighten your day with Uplift.me</p>}
     </div>
   )
 
