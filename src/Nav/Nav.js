@@ -8,13 +8,13 @@ import { Link } from "react-router-dom"
       super()
       this.state = {
         url: 'animals',
-        buttonText: 'Animals'
+        buttonText: 'Animal Pics'
       }
     }
 
      pageSwitch = () => {
       if(this.state.url !== 'animals') {
-        this.setState({url: 'animals', buttonText: 'Animals'})
+        this.setState({url: 'animals', buttonText: 'Animal Pics'})
       } else {
         this.setState({url: '', buttonText: 'Journal'}) 
       }
