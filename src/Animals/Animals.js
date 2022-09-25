@@ -16,7 +16,7 @@ const Animals = ({dogs}) => {
 
   return (
     <div className="animals-container">
-      { dogCards.length ? dogCards : <p className="error-messagee">No animals found at this time :(</p>}
+      { dogCards.length ? dogCards : <p className="animal-error-message">No animals found at this time :(</p>}
     </div>
   )
 }
