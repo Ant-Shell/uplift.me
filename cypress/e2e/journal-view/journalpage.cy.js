@@ -24,9 +24,14 @@ describe('Journal view', () => {
   })
 
   it('displays a message if randomized quote is unavailable', () => {
-    // Thought for the day header check
+    cy.get('h2').contains('Thought for the day:') 
     // Simulate invalid fetch call
-    // Randomized message unavailable check - need to build this in
+    cy.intercept('GET', 'https://type.fit/api/quotes', {
+      statusCode: 401
+    })
+    .get('p[class=quote-error-message]')
+    .should('contain', 'Brighten your day with Uplift.me')
+    // Randomized message unavailable check
   })
 
   it('should have a message input field', () => {
