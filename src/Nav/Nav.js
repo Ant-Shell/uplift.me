@@ -16,7 +16,7 @@ import { Link } from "react-router-dom"
       if(this.state.url !== 'animals') {
         this.setState({url: 'animals', buttonText: 'Animal Pics'})
       } else {
-        this.setState({url: 'journal', buttonText: 'Journal Time'}) 
+        this.setState({url: '', buttonText: 'Journal Time'}) 
       }
     }
 
@@ -25,7 +25,7 @@ import { Link } from "react-router-dom"
           <nav>
             <header>
               <h1 className="branding">Uplift.me</h1>
-              <Link to={`/${this.state.url}`}><button className="view-change-button" id="viewChangeButton" onClick={() => this.pageSwitch()}>{this.state.buttonText}</button></Link>
+              <Link to={`/uplift.me/${this.state.url}`}><button className="view-change-button" id="viewChangeButton" onClick={() => this.pageSwitch()}>{this.state.buttonText}</button></Link>
             </header>
           </nav>
         )

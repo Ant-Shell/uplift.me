@@ -1,6 +1,6 @@
 describe('Animal view', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000/animals')
+    cy.visit('http://localhost:3000/uplift.me/animals')
   })
 
   it('displays a header', () => {
