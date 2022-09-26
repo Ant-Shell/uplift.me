@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/uplift.me/static/css/main.eeb07555.css",
-    "main.js": "/uplift.me/static/js/main.52133193.js",
+    "main.js": "/uplift.me/static/js/main.5b7df92b.js",
     "static/media/brock-wegner-jAyzVJvgD8Y-unsplash.jpg": "/uplift.me/static/media/brock-wegner-jAyzVJvgD8Y-unsplash.a0816badcb1639890300.jpg",
     "index.html": "/uplift.me/index.html",
     "main.eeb07555.css.map": "/uplift.me/static/css/main.eeb07555.css.map",
-    "main.52133193.js.map": "/uplift.me/static/js/main.52133193.js.map"
+    "main.5b7df92b.js.map": "/uplift.me/static/js/main.5b7df92b.js.map"
   },
   "entrypoints": [
     "static/css/main.eeb07555.css",
-    "static/js/main.52133193.js"
+    "static/js/main.5b7df92b.js"
   ]
 }
