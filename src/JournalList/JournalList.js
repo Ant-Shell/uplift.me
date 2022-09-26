@@ -2,7 +2,7 @@ import React from "react"
 import "./JournalList.css"
 import JournalCard from "../JournalCard/JournalCard"
 
-const JournalList = ( { journalList }) => {
+const JournalList = ( { journalList, deleteJournalEntry }) => {
   const journalCards = journalList.map(journal => {
     return (
       <JournalCard 
@@ -11,6 +11,7 @@ const JournalList = ( { journalList }) => {
       time={journal.time}
       entry={journal.journalEntry}
       key={journal.id}
+      deleteJournalEntry={deleteJournalEntry}
       />
     )
   })
