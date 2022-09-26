@@ -1,6 +1,6 @@
 describe('Journal view', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000/journal')
+    cy.visit('http://localhost:3000/uplift.me/')
   })
 
   it('displays a header', () => {
