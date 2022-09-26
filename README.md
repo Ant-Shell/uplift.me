@@ -10,7 +10,7 @@ while working under time and scope constraints.
 - The user can also navigate to a page to view cute animal pictures - so cute!
 
 ## Setup
-- Click [here](https://ant-shell.github.io/uplift.me/journal) to check it out!
+- Click [here](https://ant-shell.github.io/uplift.me/) to check it out!
 
 ## Application in Action
 Coming soon ...
