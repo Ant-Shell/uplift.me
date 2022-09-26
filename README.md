@@ -21,6 +21,7 @@ Coming soon ...
 - Router
 - Fetch API
 - Cypress
+- PropTypes
 
 ## Goals, Challenges, and Wins
 
