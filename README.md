@@ -36,11 +36,12 @@ Coming soon ...
 - Learning how to pace the project to meet and exceed goals
 
 ## Possible Future Extensions
-- Delete button for individual journal enteries
-- Clear button for all journal entries
+- Button for removing all saved journal entries at once
 - Ability to choose more animal types for viewing
 - Improved styling
 - Improved performance
+- Persistant storage
+- User login/logout
 
 ## Sources
 - [MDN](http://developer.mozilla.org/en-US/)
