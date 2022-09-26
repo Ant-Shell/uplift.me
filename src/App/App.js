@@ -27,6 +27,11 @@ class App extends React.Component {
     this.setState({savedJournals: [...this.state.savedJournals, newJournalEntry], noJournalEntry: false})
   }
 
+  deleteJournalEntry = (id) => {
+    const updatedJournalList = this.state.savedJournals.filter(journal => journal.id !== id)
+    this.setState({ savedJournals: updatedJournalList })
+  }
+
   noJournalEntryUpdate = () => {
     this.setState({ noJournalEntry: true })
   }
@@ -49,7 +54,7 @@ class App extends React.Component {
         <Nav url={this.state.url} buttonText={this.state.buttonText} />
         <Quotes quotes={this.state.quotes} />
         <Switch>
-          <Route exact path="/" render={() => <JournalSection journalList={this.state.savedJournals} addJournalEntry={this.addJournalEntry} noJournalEntry={this.state.noJournalEntry} noJournalEntryUpdate={this.noJournalEntryUpdate}/>}/>
+          <Route exact path="/" render={() => <JournalSection journalList={this.state.savedJournals} addJournalEntry={this.addJournalEntry} noJournalEntry={this.state.noJournalEntry} noJournalEntryUpdate={this.noJournalEntryUpdate} deleteJournalEntry={this.deleteJournalEntry}/>}/>
           <Route exact path="/animals" render={() => <AnimalSection dogs={this.state.shibes}/>}/>
           <Route path="*" render={() => <Error/>}/>
         </Switch>
