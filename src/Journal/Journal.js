@@ -1,5 +1,6 @@
 import React from "react"
 import "./Journal.css"
+import PropTypes from 'prop-types'
 
 class Journal extends React.Component {
   constructor() {
@@ -57,3 +58,9 @@ class Journal extends React.Component {
 
 
 export default Journal
+
+Journal.propTypes = {
+  addJournalEntry: PropTypes.func.isRequired,
+  noJournalEntry: PropTypes.bool.isRequired,
+  noJournalEntryUpdate: PropTypes.func.isRequired
+}

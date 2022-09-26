@@ -16,11 +16,6 @@ describe('Animal view', () => {
     .click()
   })
 
-  // it('should be able to view an animals banner', () => {
-    // thinking about conditional render for this page, instead of
-    // Thought of the Day / randomized quote
-  // })
-
   it('should show pictures of cute animals', () => {
     cy.get('div[class=animals-container]')
     .find('div[class=dog-card]')
