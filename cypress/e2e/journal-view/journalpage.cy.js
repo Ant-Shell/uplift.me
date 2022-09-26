@@ -18,7 +18,7 @@ describe('Journal view', () => {
   })
 
   it('displays a quote', () => {
-    cy.get('h2').contains('Thought for the day:') 
+    cy.get('h2').contains('Thought for the Day:') 
     cy.get('p[id=quoteText]')
     cy.get('p[id=author]')
   })
