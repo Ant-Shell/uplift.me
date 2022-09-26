@@ -16,7 +16,7 @@ import { Link } from "react-router-dom"
       if(this.state.url !== 'animals') {
         this.setState({url: 'animals', buttonText: 'Animal Pics'})
       } else {
-        this.setState({url: '', buttonText: 'Journal Time'}) 
+        this.setState({url: 'journal', buttonText: 'Journal Time'}) 
       }
     }
 
