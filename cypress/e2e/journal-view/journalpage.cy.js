@@ -1,6 +1,6 @@
 describe('Journal view', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000/')
+    cy.visit('http://localhost:3000/journal')
   })
 
   it('displays a header', () => {
@@ -24,7 +24,7 @@ describe('Journal view', () => {
   })
 
   it('displays a message if randomized quote is unavailable', () => {
-    cy.get('h2').contains('Thought for the day:') 
+    cy.get('h2').contains('Thought for the Day:') 
     cy.intercept('GET', 'https://type.fit/api/quotes', {
       statusCode: 401
     })
