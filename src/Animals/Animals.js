@@ -2,7 +2,7 @@ import React from "react"
 import "./Animals.css"
 import DogCard from "../DogCard/DogCard"
 
-const Animals = ({dogs}) => {
+const Animals = ({ dogs }) => {
   const dogCards = dogs.map((dog, index) => {
     const value = Date.now()
     return (

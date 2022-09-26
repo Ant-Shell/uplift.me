@@ -33,7 +33,7 @@ class Journal extends React.Component {
 
   clearJournalInput = (event) => {
     event.preventDefault()
-    this.setState({journalEntry: ""})
+    this.setState({ journalEntry: "" })
   }
 
   render() {
