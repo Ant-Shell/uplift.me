@@ -1,7 +1,7 @@
 import React from "react"
 import "./Quote.css"
 
-const Quote = ({text, author}) => {
+const Quote = ({ text, author }) => {
   return (
     <div className="quote">
       <p className="quote-text" id="quoteText">"{text}"</p>

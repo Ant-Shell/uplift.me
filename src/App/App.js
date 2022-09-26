@@ -7,7 +7,7 @@ import Error from "../Error/Error"
 import './App.css'
 import { quotesEndpoint, animalEndpoint } from "../endpoints"
 import fetchData from "../apiCalls"
-import { Route, Switch} from "react-router-dom"
+import { Route, Switch } from "react-router-dom"
 
 
 class App extends React.Component {
@@ -24,7 +24,7 @@ class App extends React.Component {
   }
 
   addJournalEntry = (newJournalEntry) => {
-    this.setState({savedJournals: [...this.state.savedJournals, newJournalEntry], noJournalEntry: false})
+    this.setState({ savedJournals: [...this.state.savedJournals, newJournalEntry], noJournalEntry: false })
   }
 
   deleteJournalEntry = (id) => {
@@ -58,7 +58,6 @@ class App extends React.Component {
           <Route exact path="/animals" render={() => <AnimalSection dogs={this.state.shibes}/>}/>
           <Route path="*" render={() => <Error/>}/>
         </Switch>
-        {/* Footer /> */}
       </main>
     );
   }

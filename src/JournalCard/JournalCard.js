@@ -1,8 +1,7 @@
 import React from "react"
 import "./JournalCard.css"
 
-const JournalCard = ( {id, date, entry, time, deleteJournalEntry}) => {
-  // Need button to remove entry
+const JournalCard = ({ id, date, entry, time, deleteJournalEntry }) => {
   return (
     <div className="card">
       <p>{date} @ {time}</p>
