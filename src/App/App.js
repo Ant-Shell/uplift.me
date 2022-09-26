@@ -51,7 +51,7 @@ class App extends React.Component {
   render() {
     return (
       <main className="app">
-        <Nav url={this.state.url} buttonText={this.state.buttonText} />
+        <Nav />
         <Quotes quotes={this.state.quotes} />
         <Switch>
           <Route exact path="/uplift.me/" render={() => <JournalSection journalList={this.state.savedJournals} addJournalEntry={this.addJournalEntry} noJournalEntry={this.state.noJournalEntry} noJournalEntryUpdate={this.noJournalEntryUpdate} deleteJournalEntry={this.deleteJournalEntry}/>}/>
