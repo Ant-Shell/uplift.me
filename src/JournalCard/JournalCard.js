@@ -1,6 +1,6 @@
 import React from "react"
 import "./JournalCard.css"
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
 const JournalCard = ({ id, date, entry, time, deleteJournalEntry }) => {
   return (

@@ -1,6 +1,6 @@
 import React from "react"
 import "./Journal.css"
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
 class Journal extends React.Component {
   constructor() {

@@ -1,6 +1,6 @@
 import React from "react"
 import "./DogCard.css"
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
 const DogCard = ({ id, dogPic }) => {
   return (

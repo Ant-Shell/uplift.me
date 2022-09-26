@@ -2,7 +2,7 @@ import React from "react"
 import "./JournalSection.css"
 import Journal from "../Journal/Journal"
 import JournalList from "../JournalList/JournalList"
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
 
 const JournalSection = ({ addJournalEntry, journalList, noJournalEntry, noJournalEntryUpdate, deleteJournalEntry }) => {

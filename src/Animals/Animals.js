@@ -1,7 +1,7 @@
 import React from "react"
 import "./Animals.css"
 import DogCard from "../DogCard/DogCard"
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
 const Animals = ({ dogs }) => {
   const dogCards = dogs.map((dog, index) => {

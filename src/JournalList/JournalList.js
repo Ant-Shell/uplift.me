@@ -1,7 +1,7 @@
 import React from "react"
 import "./JournalList.css"
 import JournalCard from "../JournalCard/JournalCard"
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
 const JournalList = ( { journalList, deleteJournalEntry }) => {
   const journalCards = journalList.map(journal => {
