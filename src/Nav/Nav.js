@@ -15,8 +15,10 @@ import { Link } from "react-router-dom"
      pageSwitch = () => {
       if(this.state.url !== 'animals') {
         this.setState({url: 'animals', buttonText: 'Animal Pics'})
+        this.props.journalViewUpdate()
       } else {
-        this.setState({url: '', buttonText: 'Journal Time'}) 
+        this.setState({url: '', buttonText: 'Journal Time'})
+        this.props.journalViewUpdate() 
       }
     }
 
