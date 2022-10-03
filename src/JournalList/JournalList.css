@@ -1,4 +1,7 @@
 .journallist-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   height: 45vh;
   width: 30vw;
   border-style: solid;
@@ -7,4 +10,11 @@
 
 .add-journal-message {
   text-align: center;
+}
+
+.remove-entries-button{
+  height: 2vh;
+  margin-top: 43vh;
+  margin-left: 19.1vw;
+  position: fixed;
 }
