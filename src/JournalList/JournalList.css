@@ -14,7 +14,8 @@
 
 .remove-entries-button{
   height: 2vh;
+  margin-right: 0.3vw;
   margin-top: 43vh;
-  margin-left: 19.1vw;
+  align-self: flex-end;
   position: fixed;
 }
