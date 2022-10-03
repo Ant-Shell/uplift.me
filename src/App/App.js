@@ -20,6 +20,7 @@ class App extends React.Component {
         birds: [],
         savedJournals: [],
         noJournalEntry: false,
+        journalView: true
      }
   }
 
@@ -34,6 +35,10 @@ class App extends React.Component {
 
   noJournalEntryUpdate = () => {
     this.setState({ noJournalEntry: true })
+  }
+
+  journalViewUpdate = () => {
+    this.state.journalView === true ? this.setState({ journalView: false}) : this.setState({ journalView: true})
   }
 
   componentDidMount = () => {
@@ -51,8 +56,8 @@ class App extends React.Component {
   render() {
     return (
       <main className="app">
-        <Nav />
-        <Quotes quotes={this.state.quotes} />
+        <Nav journalViewUpdate={this.journalViewUpdate}/>
+        {this.state.journalView === true ? <Quotes quotes={this.state.quotes} /> : <h2 className="animal-header">Cute animal pictures!</h2>}
         <Switch>
           <Route exact path="/uplift.me/" render={() => <JournalSection journalList={this.state.savedJournals} addJournalEntry={this.addJournalEntry} noJournalEntry={this.state.noJournalEntry} noJournalEntryUpdate={this.noJournalEntryUpdate} deleteJournalEntry={this.deleteJournalEntry}/>}/>
           <Route exact path="/uplift.me/animals" render={() => <AnimalSection dogs={this.state.shibes}/>}/>
