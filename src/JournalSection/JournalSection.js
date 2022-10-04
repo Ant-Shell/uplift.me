@@ -5,11 +5,11 @@ import JournalList from "../JournalList/JournalList"
 import PropTypes from 'prop-types'
 
 
-const JournalSection = ({ addJournalEntry, journalList, noJournalEntry, noJournalEntryUpdate, deleteJournalEntry }) => {
+const JournalSection = ({ addJournalEntry, journalList, noJournalEntry, noJournalEntryUpdate, deleteJournalEntry, deleteAllJournalEntries }) => {
   return (
     <div className="journal-section">
       <Journal addJournalEntry={addJournalEntry} noJournalEntry={noJournalEntry} noJournalEntryUpdate={noJournalEntryUpdate}  />
-      <JournalList journalList={journalList} deleteJournalEntry={deleteJournalEntry} />
+      <JournalList journalList={journalList} deleteJournalEntry={deleteJournalEntry} deleteAllJournalEntries={deleteAllJournalEntries} />
     </div>
   )
 }
