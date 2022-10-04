@@ -33,6 +33,10 @@ class App extends React.Component {
     this.setState({ savedJournals: updatedJournalList })
   }
 
+  deleteAllJournalEntries = () => {
+    this.setState({ savedJournals: [] })
+  }
+
   noJournalEntryUpdate = () => {
     this.setState({ noJournalEntry: true })
   }
@@ -59,7 +63,7 @@ class App extends React.Component {
         <Nav journalViewUpdate={this.journalViewUpdate}/>
         {this.state.journalView === true ? <Quotes quotes={this.state.quotes} /> : <h2 className="animal-header">Cute animal pictures!</h2>}
         <Switch>
-          <Route exact path="/uplift.me/" render={() => <JournalSection journalList={this.state.savedJournals} addJournalEntry={this.addJournalEntry} noJournalEntry={this.state.noJournalEntry} noJournalEntryUpdate={this.noJournalEntryUpdate} deleteJournalEntry={this.deleteJournalEntry}/>}/>
+          <Route exact path="/uplift.me/" render={() => <JournalSection journalList={this.state.savedJournals} addJournalEntry={this.addJournalEntry} noJournalEntry={this.state.noJournalEntry} noJournalEntryUpdate={this.noJournalEntryUpdate} deleteJournalEntry={this.deleteJournalEntry} deleteAllJournalEntries={this.deleteAllJournalEntries}/>}/>
           <Route exact path="/uplift.me/animals" render={() => <AnimalSection dogs={this.state.shibes}/>}/>
           <Route path="*" render={() => <Error/>}/>
         </Switch>
