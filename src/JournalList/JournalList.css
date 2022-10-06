@@ -1,4 +1,5 @@
 .journallist-container {
+  position: relative;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -12,8 +13,8 @@
   text-align: center;
 }
 
-.remove-entries-button{
-  margin-top: 42.8vh;
-  align-self: flex-end;
-  position: fixed;
+.button-container {
+  position: absolute;
+  top: 43vh;
+  right: 0
 }
